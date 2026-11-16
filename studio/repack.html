@@ -1,0 +1,27 @@
+<!doctype html><html lang="sw"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Huisha source za plugin</title><link rel="stylesheet" href="builder.css"></head>
+<body class="sp-page"><main class="sp-box"><h2>Huisha mafaili ya kutengeneza plugin</h2><p>Baada ya kuhariri plugins au visual.js, chagua folder nzima ya ShottoOffice. Hifadhi faili itakayopakuliwa kama studio/sources.js na ufungue tena builder.</p><label>Folder ya ShottoOffice <input type="file" webkitdirectory multiple id="folder"></label><p id="status" role="status"></p></main><script src="fflate.min.js"></script><script>
+'use strict';
+const files={"spell-engine.js":"plugins/spelling/engine.js","spell-dictionaries.js":"plugins/spelling/dictionaries.js","spell-plugin.js":"plugins/spelling/plugin.js","spelling/dictionaries/en_GB.aff":"plugins/spelling/dictionaries/en_GB.aff","spelling/dictionaries/en_GB.dic":"plugins/spelling/dictionaries/en_GB.dic","spelling/dictionaries/sw_TZ.aff":"plugins/spelling/dictionaries/sw_TZ.aff","spelling/dictionaries/sw_TZ.dic":"plugins/spelling/dictionaries/sw_TZ.dic","spelling/licenses/DICTIONARIES.txt":"plugins/spelling/licenses/DICTIONARIES.txt","spelling/licenses/LGPL-2.1.txt":"plugins/spelling/licenses/LGPL-2.1.txt","spelling/licenses/is-buffer.txt":"plugins/spelling/licenses/is-buffer.txt","spelling/licenses/nspell.txt":"plugins/spelling/licenses/nspell.txt",'math.js':'plugins/mathematics/plugin.js','drawing.js':'plugins/drawing/plugin.js','pages.js':'plugins/page-layout/plugin.js','visual.js':'studio/visual.js','inline.js':'studio/inline-equations.js','ribbon.js':'ribbon/ribbon.js','ribbon.css':'ribbon/ribbon.css','LICENSE.txt':'LICENSE.txt','notices.txt':'licenses/THIRD_PARTY_NOTICES.txt','math-legal.txt':'plugins/mathematics/app.js.LEGAL.txt'};
+document.getElementById('folder').onchange=async event=>{
+  const status=document.getElementById('status');
+  try{
+    const chosen=new Map([...event.target.files].map(f=>[f.webkitRelativePath.split('/').slice(1).join('/'),f]));
+    const entries={};
+    for(const [key,path] of Object.entries(files)){
+      const file=chosen.get(path);
+      if(!file)throw new Error('Faili inakosekana: '+path);
+      entries[key]=new Uint8Array(await file.arrayBuffer());
+    }
+    const marker='window.ShottoFreeMathCSS=';
+    const line=fflate.strFromU8(entries['math.js']).split('\n').find(line=>line.startsWith(marker));
+    if(!line)throw new Error('Equation CSS haijapatikana.');
+    entries['equation.css']=fflate.strToU8(JSON.parse(line.slice(marker.length).replace(/;$/,'')));
+    const zip=fflate.zipSync(entries,{level:7});
+    let content='';
+    for(let start=0;start<zip.length;start+=32768)content+=String.fromCharCode(...zip.subarray(start,start+32768));
+    const uri=URL.createObjectURL(new Blob(['window.ShottoStudioArchive="'+btoa(content)+'";'],{type:'text/javascript'}));
+    const link=document.createElement('a');link.href=uri;link.download='sources.js';link.click();setTimeout(()=>URL.revokeObjectURL(uri),30000);
+    status.textContent='sources.js iko tayari. Badilisha studio/sources.js kwa nakala hiyo.';
+  }catch(error){status.textContent=error.message;}
+};
+</script></body></html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Shotto Office — Ribbon Edition</title><link rel="stylesheet" href="ribbon/ribbon.css"><link rel="stylesheet" href="assets/office.css"><link rel="stylesheet" href="studio/builder.css"></head>
+<body>
+ <div class="office-app">
+  <header class="titlebar"><a class="app-logo" href="index.html" title="Shotto Office">S</a><label class="autosave">AutoSave <input id="autosave" type="checkbox" checked><span class="toggle"><i></i></span></label><div class="quick-actions"><button id="quick-save" title="Save JSON" aria-label="Save JSON"></button><button id="quick-undo" title="Undo" aria-label="Undo"></button><button id="quick-redo" title="Redo" aria-label="Redo"></button></div><label class="sr-only" for="document-title">Document name</label><input id="document-title" value="Document1" maxlength="100"><span class="app-name">— Shotto Office</span><div class="title-search"><span aria-hidden="true">⌕</span><input id="command-search" aria-label="Search document" placeholder="Search document"><kbd>Ctrl+F</kbd></div><span class="local-badge">Saved on this device</span><button class="export-button" id="export-button">Export</button></header>
+  <div id="office-ribbon" aria-label="Shotto Office toolbar"><div class="loading-ribbon">Loading Shotto Office…</div></div>
+  <div class="work-area">
+   <aside id="navigation" class="navigation"><div class="pane-title"><span>Navigation</span><button id="close-nav" title="Close Navigation" aria-label="Close Navigation">×</button></div><div class="nav-search-wrap"><input id="nav-search" aria-label="Search in document" placeholder="Search document"><button id="nav-find" title="Find" aria-label="Find in document">⌕</button></div><div class="nav-tabs" role="tablist" aria-label="Navigation"><button role="tab" aria-selected="true" data-nav="headings">Headings</button><button role="tab" aria-selected="false" data-nav="pages">Pages</button><button role="tab" aria-selected="false" data-nav="results">Results</button></div><div id="navigation-list"></div><div class="nav-bottom">Your ideas, your workspace.</div></aside>
+   <main class="document-workspace"><div class="ruler-bar" id="ruler"><div class="ruler-paper"><span class="ruler-indent left-indent"></span><div id="ruler-ticks"></div><span class="ruler-indent right-indent"></span></div></div><div id="load-warning" hidden>Internet is needed to load TinyMCE from the CDN. Connect and refresh this page. <a href="studio/index.html">Tengeneza Plugin</a></div><form id="document-form"><textarea id="editor" name="content"><h1>A clearer way to write.</h1><p>Make room for good work</p><p>Shape your ideas, put numbers in place, and make every page your own.</p><h2>Make room for good work</h2><p>Start with a thought. Build it into something useful. Shotto Office brings your words, drawings and mathematics together in one familiar workspace.</p><h2>Numbers belong here, too</h2><p>Insert an equation, calculate an expression or draw a function graph from the <strong>Mathematics</strong> tab.</p><h2>A few things to try</h2><table border="1" style="width:100%;border-collapse:collapse"><tbody><tr style="background:#edf3f2"><td>Make it yours</td><td>Where to begin</td></tr><tr><td>Take your work with you</td><td>Save file or Export</td></tr></tbody></table><p style="color:#6c8881;font-size:10pt">No sign-up. No subscription. Just your next idea.</p></textarea><input type="hidden" name="page_settings" id="page-settings"></form></main>
+   <aside id="selection-pane" class="selection-pane" hidden><div class="pane-title"><span>Selection</span><button id="close-layers" aria-label="Close Selection">×</button></div><p class="pane-help">Select a shape to arrange or edit it.</p><div id="layer-list"></div></aside>
+  </div>
+  <footer class="statusbar"><span id="page-status">Page 1 of 1</span><button id="word-count">0 words</button><span id="proof-language">English (UK)</span><span id="save-status" role="status">Loading…</span><span class="status-spacer"></span><button id="focus-button" title="Focus mode">Focus</button><button id="nav-toggle" title="Navigation pane">☷</button><button id="zoom-minus" aria-label="Zoom out">−</button><input type="range" id="zoom-range" aria-label="Document zoom" min="50" max="150" value="100"><button id="zoom-plus" aria-label="Zoom in">+</button><button id="zoom-label">100%</button></footer>
+ </div>
+ <input type="file" id="open-document" accept=".json,application/json" hidden><input type="file" id="open-picture" accept="image/png,image/jpeg,image/webp,image/gif" hidden>
+ <dialog id="source-dialog"><div class="dialog-top"><h2>Form content</h2><button data-close="source-dialog" aria-label="Close content">×</button></div><p>HTML and page settings from your form. Nothing has been sent.</p><pre id="source-output"></pre></dialog>
+ <dialog id="new-dialog"><h2>Create a new document?</h2><p>Download your current document first if you want to keep a separate copy.</p><div class="dialog-actions"><button data-close="new-dialog">Cancel</button><button id="confirm-new" class="primary">Create new</button></div></dialog>
+ <div id="toast" role="status" hidden></div>
+ <script src="https://cdn.jsdelivr.net/npm/tinymce@6/tinymce.min.js" referrerpolicy="origin"></script>
+ <script src="plugins/spelling/engine.js"></script>
+<script src="plugins/spelling/dictionaries.js"></script>
+<script src="plugins/spelling/plugin.js"></script>
+<script src="plugins/drawing/plugin.js"></script><script src="plugins/mathematics/plugin.js"></script><script src="plugins/page-layout/plugin.js"></script><script src="studio/catalog.js"></script>
+<script src="studio/inline-equations.js"></script>
+<script src="studio/visual.js"></script>
+<script src="studio/fflate.min.js"></script>
+<script src="studio/sources.js"></script>
+<script src="studio/portable.js"></script>
+<script src="studio/builder.js"></script>
+<script src="ribbon/ribbon.js"></script><script src="assets/office.js"></script>
+</body></html>

@@ -1,0 +1,135 @@
+Shotto Office 6.0 — 16 November 2026
+
+Verified in Chrome with TinyMCE 6.8.6. The same checks ran against the Office
+ribbon and the generated spelling-only plugin on an independent static form.
+* Mouseover and primary click left the editor in normal editing mode.
+* An actual secondary mouse click on a misspelling opened local suggestions
+  next to the word. Chose the third suggestion for "colourr" and saw "colours"
+  in the document. The final build offered four distinct candidates for
+  "mwanafunzu". Candidate counts depend on the word and dictionary.
+* Checked exact caret offsets after choosing a non-first suggestion, entering
+  a manual replacement and ignoring the second of two identical occurrences.
+  The menu closed each time. Ignoring also worked from the full Review panel.
+* Ignoring one occurrence preserved the underline on its duplicate. Editing
+  earlier text in the same node preserved the ignore on the original occurrence.
+* Confirmed Undo, punctuation after a replacement, formatting across bold
+  boundaries, normal context handling on correct words, outside dismissal,
+  and clean saved HTML. The independent form blocked network data connections.
+* Loaded the combined plugin example, inserted an ellipse and verified that
+  Shape Format appeared. The three example ZIPs were regenerated from Studio.
+* The physical touchpad hardware was not part of this desktop browser test.
+  A touchpad right button uses the same browser contextmenu event.
+
+Earlier validation notes follow.
+
+Shotto Office 5.0 — 16 November 2026
+
+Checked in Chrome on the static Office project and on an independent TinyMCE 6 form.
+* Opened Review → Spell Check. Generated both sample plugin ZIPs from the actual
+  Studio controls and loaded the standalone spelling ZIP via external_plugins.
+* On an independent form with a local copy of TinyMCE 6.8.6, the browser CSP
+  disabled external resources and all network data connections. Swahili and UK
+  English suggestions and dictionary additions worked within that form.
+* Accepted Ninasoma, Nilisoma and Watasoma. Corrected mwanafunzu to mwanafunzi
+  via its suggestion. Marked the selected phrase "centrifugal pump colourr" as
+  English and corrected colourr to colour. The submitted textarea contained
+  the English span and the corrected text, without spelling highlights.
+* After adding a custom word, reloaded and confirmed it was remembered. Ignore
+  skipped a single occurrence without changing document content.
+* Checked correction across bold boundaries, Undo, skipping a non-editable
+  equation, and language attributes surviving a getContent/setContent round trip.
+* Switched the document language twice and retained explicitly tagged passages.
+* Verified shape insertion and access to spelling and mathematics in the combined
+  Studio export. The shapes-only sample remains available from release 4.
+* JavaScript syntax, HTML references, embedded generator inputs, licenses,
+  dictionaries and archive integrity checked before packaging.
+
+Scope: this is a spelling checker. The desktop integration tests covered sample
+passages, not the entire vocabulary, mobile devices or all browsers. The Office
+demo loads TinyMCE from its configured CDN. CSS Custom Highlight underlining
+depends on browser support; the review panel can list issues independently.
+
+Shotto Office 4.0 — 16 November 2026
+
+Chrome, TinyMCE 6, static HTTP preview
+* Opened an equation saved in the older office document by clicking one digit.
+  Applied a root only to the clicked digit and replaced a nested digit by typing.
+* Generated and downloaded two ZIPs from the Studio: all 92 math templates
+  plus Shapes, and a separate Shapes-only plugin.
+* Loaded the combined plugin on an independent HTML form via external_plugins.
+  Inserted a visual fraction, clicked its denominator, and changed 3/4 into
+  3/sqrt(4). Reopened it in-place and replaced just the 4 with 5 by typing.
+  With 5 selected, opened Formulas, filled the fraction template and inserted
+  at the cursor. The stored expression was 3/sqrt(5/2).
+* With the final combined package, edited a fraction then added an arrow beside
+  it. Both document objects remained. Verified contextual Shape Format, eight
+  resize handles, a width of 6 cm, rotation, a style change, front-of-text
+  wrapping, and that the contextual tab disappeared when clicking body text.
+* Opened the Shapes-only ZIP's own example in an independent page, inserted an
+  ellipse, edited its text to "Jibu" and checked the saved shape metadata.
+* Checked JavaScript syntax, local asset references, embedded generator sources
+  and integrity of both sample archives and the full download.
+
+Notes: tests used an HTTP preview on desktop. Direct file:// launching, mobile
+touch, every gallery entry with nesting, and every layout combination were
+not re-tested. TinyMCE 6 loads from the requested CDN. See README_SW.md.
+
+Earlier release checks (the sample ZIPs described below belonged to those releases).
+
+Shotto Office 3.0 — 16 November 2026
+
+Chrome, TinyMCE 6, static preview
+* Entered a numerator of 3 and denominator of 4 in the visual fraction template.
+* Saved the equation under My formulas, inserted it into the document and opened
+  the inserted formula for visual editing. JSON retained the equation metadata.
+* Updated a formula, reloaded the editor, and checked that the equation remained.
+* Created a plugin with exactly Fractions, Geometry and Matrices, with saved
+  formulas included. The independent preview showed these three categories.
+* Inserted the saved fraction in the preview, then downloaded a real plugin ZIP.
+* Extracted the final ZIP into a separate form using external_plugins, loaded
+  TinyMCE 6 and inserted a 2 x 2 matrix. The expected matrix markup and plugin
+  identity were present in that form's document. This ZIP is included in examples.
+* Rendered the defaults of all 92 templates in the MathLive renderer and checked
+  that none produced a rendering error. Numerical calculations were not implied.
+* The browser end-to-end tests used an HTTP preview. Direct file:// behavior and
+  every combination of optional tools were not exercised.
+
+Previous release checks follow for existing features.
+
+Shotto Office Ribbon 2.0 — validation, 13 November 2026
+
+Browser checks performed in Chrome against the static project preview:
+- Home, Insert, Shapes, Mathematics, Review, File and contextual Shape Format render.
+- Shape gallery uses SVG icon buttons in the ribbon, grouped by category.
+- Rectangle and right-arrow insertion creates editable document objects.
+- Selection shows eight resize handles, rotation and contextual controls.
+- Rectangle dragged, resized from 180x120 to 240x170 and rotated to 90 degrees.
+- Fill changed to green; text changed to 'Shotto Office'.
+- Ribbon numeric fields changed width to 7 cm and rotation to 0 degrees.
+- Reload retained width, rotation, fill, text and floating position.
+- Yellow right-arrow handle changed geometry; metadata survived reload.
+- Blank page at end produced two pages and kept floating rectangle on page one.
+- Undo restored preceding page layout.
+- Equation dialog rendered the quadratic formula using embedded math fonts.
+- Equation after reload stayed on the existing page without an extra leading page.
+- Calculator evaluated sqrt(144) + 2^3 to 20 and inserted the result.
+- Source Code dialog accepted edited HTML and retained page wrapper.
+- JSON and HTML download controls produced actual files.
+- Exported HTML contained embedded PNG shapes and math fonts, no script tags.
+- Final JSON retained shape metadata and excluded selection handles/overlay.
+- Final one-page sample exported as one page.
+
+Source/package checks:
+- Syntax checked for every shipped JS file.
+- Local HTML script/style paths checked for index and integration example.
+- ZIP integrity checked; source and third-party license notices included.
+- No package manager or Node runtime required by the delivered app.
+
+Limits:
+- Direct file:// launching, file-picker uploads/imports and OS print/PDF dialog
+  were not exercised in this browser environment.
+- PDF depends on browser print settings and printer behavior.
+- This is not exhaustive browser/device, accessibility or security certification.
+- Additional drawing/math features inherited from free edition were not all
+  retested in this ribbon update. No measured 99% visual-equivalence claim.
+- Pages are manual; automatic Word repagination and DOCX are not implemented.

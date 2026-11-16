@@ -1,0 +1,29 @@
+SHOTTO OFFICE 6.0
+
+1. Extract ZIP yote. Fungua ShottoOffice/index.html kwa Chrome au Edge.
+2. Chagua Mathematics → Fractions. Weka 3 kwenye Juu na 4 kwenye Chini.
+   Bonyeza Insert equation. Kwenye ukurasa, bofya 4 mara moja, kisha √.
+   Bofya Done. Bofya 4 ndani ya mzizi na uandike 5. Utapata 3 juu ya √5.
+   Ukiwa ndani ya fomula, Formulas → chagua kadi → Insert at cursor huingiza
+   fomula nyingine pale ulipochagua. Bofya Done kuendelea na maandishi.
+3. Shapes ni tab ya icons. Chagua mchoro, kisha tumia Shape Format kubadili
+   rangi, maandishi, ukubwa, mzunguko, wrap au mahali mchoro ulipo.
+4. Tengeneza Plugin → chagua makundi na/au Shapes + Shape Format → Pakua ZIP.
+   Extract na ufungue example.html kuijaribu. INSTALL.txt ina maelekezo ya
+   kuongeza plugin kwenye tinymce.init ya fomu yako.
+5. Review → Spell Check: chagua Kiswahili au English (UK). Kwa lugha ya sehemu,
+   chagua maandishi, chagua lugha na bofya Weka kwa uteuzi.
+   Bofya kulia kwenye neno lenye mstari kwa mouse au kitufe cha kulia cha
+   touchpad. Chagua pendekezo au andika neno kisha bofya Badilisha. Puuza
+   huruka tukio hilo pekee. Menyu hujifunga na kishale hubaki mwishoni mwa neno.
+6. Plugins tayari kwa kutumia:
+   examples/shotto_spellcheck.zip — Spell Check ya Kiswahili na Kiingereza
+   examples/shotto_shapes.zip      — Shapes na Shape Format pekee
+   examples/shotto_exam_math.zip  — Fomula 92, Shapes, Shape Format na Spell Check
+7. File → Save JSON huhifadhi hati ya kuhariri tena. Export HTML na Print/PDF
+   zipo kwenye File. Layout ina vipimo vya karatasi, Blank page na Page break.
+
+Plugin Studio (studio/index.html) hutengeneza ZIP bila internet. Editor na
+example.html zinahitaji internet kupakia TinyMCE 6 kutoka jsDelivr.
+Project inatumia HTML, CSS na JavaScript. Haihitaji malipo, API key,
+database, Node.js au backend. Maelezo zaidi yapo README_SW.md.

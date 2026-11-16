@@ -1,0 +1,27 @@
+Shotto Office spelling dictionaries
+Source package: Debian libreoffice-dictionaries 7.5.0-1
+https://deb.debian.org/debian/pool/main/libr/libreoffice-dictionaries/
+Binary packages: hunspell-sw and hunspell-en-gb. The original dictionary and
+affix files are supplied unmodified in dictionaries/. The same text is
+embedded in dictionaries.js (decoded as ISO-8859-1 for sw_TZ and UTF-8 for
+en_GB). A short additional list of Swahili verb forms is built in plugin.js.
+
+Kiswahili sw_TZ: Copyright 2004 Jason M Githeko and 2004-2005 Alberto
+Escudero-Pascual. GNU Lesser General Public License v2.1 or later.
+See LGPL-2.1.txt.
+
+British English en_GB: David Bartlett, Andrew Brown, Marco A. G. Pinto.
+Version 3.1.4 (2022-11-01). The affix file declares the LGPL. See LGPL-2.1.txt.
+The Debian copyright notice for dictionaries/en/* also credits:
+2000-2018 Kevin Atkinson <kevina@gnu.org> and 2016 Benjamin Titze.
+Permission to use, copy, modify, distribute and sell these word lists,
+the associated scripts, the output created from the scripts, and its
+documentation for any purpose is hereby granted without fee, provided
+that the above copyright notice appears in all copies and that both
+that copyright notice and this permission notice appear in supporting
+documentation. Kevin Atkinson makes no representations about the
+suitability of this array for any purpose. It is provided "as is"
+without express or implied warranty.
+
+Checking and suggestions use nspell 2.1.5 (https://github.com/wooorm/nspell)
+and is-buffer 2.0.5. Their MIT notices are included beside this file.
