@@ -71,7 +71,7 @@
   }
   function mount(root){
     if(!root || root.dataset.mounted)return;root.dataset.mounted='true';
-    root.innerHTML='<div class="sp-box"><div class="sp-top"><h2>Tengeneza plugin ya TinyMCE</h2><div class="sp-buttons"><button type="button" data-preview>Jaribu plugin</button><button type="button" class="sp-primary" data-export>Pakua ZIP</button></div></div><div class="sp-identity"><label>Jina la kitufe <input type="text" data-title value="Shotto Exam Math" maxlength="60"></label><label>Plugin ID <input type="text" data-id value="shotto_exam_math" maxlength="60" spellcheck="false"></label></div><fieldset><legend>Makundi ya fomula</legend><div class="sp-options" data-groups></div></fieldset><fieldset><legend>Zana nyingine</legend><div class="sp-options" data-tools></div></fieldset><div class="sp-foot"><button type="button" data-all>Chagua zote</button><button type="button" data-none>Ondoa chaguo zote</button><span role="status" data-status></span></div><details><summary>Jinsi ya kuunganisha na fomu yako</summary><p>Nakili folder ya plugin kwenye plugins/ kisha ongeza ID yake kwenye toolbar. Mfano kamili upo ndani ya ZIP.</p><pre></pre></details></div>';
+    root.innerHTML='<div class="sp-box"><div class="sp-top"><h2>Tengeneza plugin ya TinyMCE</h2><div class="sp-buttons"><button type="button" data-preview>Jaribu plugin</button><button type="button" class="sp-primary" data-export>Pakua ZIP</button></div></div><div class="sp-identity"><label>Jina la kitufe <input type="text" data-title value="Shotto Tools" maxlength="60"></label><label>Plugin ID <input type="text" data-id value="shotto_exam_math" maxlength="60" spellcheck="false"></label></div><fieldset><legend>Makundi ya fomula</legend><div class="sp-options" data-groups></div></fieldset><fieldset><legend>Zana nyingine</legend><div class="sp-options" data-tools></div></fieldset><div class="sp-foot"><button type="button" data-all>Chagua zote</button><button type="button" data-none>Ondoa chaguo zote</button><span role="status" data-status></span></div><details><summary>Jinsi ya kuunganisha na fomu yako</summary><p>Nakili folder ya plugin kwenye plugins/ kisha ongeza ID yake kwenye toolbar. Mfano kamili upo ndani ya ZIP.</p><pre></pre></details></div>';
     const $=s=>root.querySelector(s);
     function choice(target,id,label,checked){
       const wrap=document.createElement('label'),box=document.createElement('input');box.type='checkbox';box.value=id;box.checked=checked;wrap.append(box,document.createTextNode(label));$(target).append(wrap);return box;
@@ -92,7 +92,7 @@
     }
     $('[data-id]').addEventListener('input',()=>{manualId=true;refresh();});
     $('[data-title]').addEventListener('input',e=>{
-      if(!manualId)$('[data-id]').value=e.target.value.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g,'_').replace(/^_+|_+$/g,'');
+      if(!manualId)$('[data-id]').value=e.target.value.trim()==='Shotto Tools'?'shotto_exam_math':e.target.value.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g,'_').replace(/^_+|_+$/g,'');
       refresh();
     });
     root.addEventListener('change',refresh);

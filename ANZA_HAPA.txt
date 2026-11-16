@@ -19,7 +19,7 @@ SHOTTO OFFICE 6.0
 6. Plugins tayari kwa kutumia:
    examples/shotto_spellcheck.zip — Spell Check ya Kiswahili na Kiingereza
    examples/shotto_shapes.zip      — Shapes na Shape Format pekee
-   examples/shotto_exam_math.zip  — Fomula 92, Shapes, Shape Format na Spell Check
+   examples/shotto_exam_math.zip  — Shotto Tools. Bofya kitufe hiki kuona ikoni za zana tisa.
 7. File → Save JSON huhifadhi hati ya kuhariri tena. Export HTML na Print/PDF
    zipo kwenye File. Layout ina vipimo vya karatasi, Blank page na Page break.
 

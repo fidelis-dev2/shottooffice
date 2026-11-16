@@ -216,7 +216,7 @@
       listen(win,'scroll',schedulePosition,true);listen(win,'resize',schedulePosition);
       listen(outerDoc,'pointerdown',e=>{
         if(!current || current.field.contains(e.target) || current.tools.contains(e.target))return;
-        if(e.target.closest?.('.sv-dialog,.shotto-ribbon,.tox-toolbar,.tox-toolbar__primary,.tox-toolbar__overflow,.tox-menu'))return;
+        if(e.target.closest?.('.sv-dialog,.shotto-tools-dialog,.shotto-ribbon,.tox-toolbar,.tox-toolbar__primary,.tox-toolbar__overflow,.tox-menu'))return;
         if(doc!==outerDoc || !editor.getBody().contains(e.target))finish();
       },true);
     });

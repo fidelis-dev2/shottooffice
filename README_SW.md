@@ -42,7 +42,7 @@ Bonyeza **Mathematics → All formulas** au kundi lililo kwenye ribbon. Kila kad
 ## Kutengeneza plugin ya mfumo mwingine
 
 1. Fungua tab **Tengeneza Plugin** au **studio/index.html** moja kwa moja.
-2. Weka jina litakaloonekana kwenye toolbar. Plugin ID hujazwa kutoka kwenye jina na unaweza kuibadili. Mfano ni `shotto_exam_math`.
+2. Weka jina litakaloonekana kwenye toolbar. Plugin ID hujazwa kutoka kwenye jina na unaweza kuibadili. Jina la awali ni **Shotto Tools** na ID yake ni `shotto_exam_math`.
 3. Chagua makundi ya fomula. Ukipenda ongeza calculator, function graph, **Shapes + Shape Format**, freehand drawing au pages.
 4. **Jaribu plugin** hufungua TinyMCE ya mfano. Kitufe chenye jina uliloweka hufungua zana ulizochagua.
 5. **Pakua ZIP**. Extract ZIP na ufungue `example.html` kujaribu nje ya Shotto Office.
@@ -57,7 +57,7 @@ external_plugins: {
 toolbar: 'undo redo | bold italic | shotto_exam_math'
 ```
 
-**examples/shotto_exam_math.zip** ina fomula 92 za makundi yote 12, Shapes, Shape Format na Spell Check. **examples/shotto_shapes.zip** ina michoro na Shape Format pekee. Katika fomu yoyote yenye plugin hiyo, tab ya Shapes huonekana juu ya TinyMCE. Ichague kufungua icons. Ukiuchagua mchoro, ribbon huonyesha Shape Format. Kubofya maandishi huificha. Plugin inabeba zana zake. Fomu ya mteja inaweza kupakia TinyMCE yake yenyewe. Kabla ya kusoma textarea, tumia `tinymce.triggerSave()`. Ukionyesha HTML ya equation nje ya TinyMCE, pakia `equation.css` kutoka kwenye ZIP hiyo kwenye ukurasa wa kusoma. Hifadhi markup ya equation na sifa zake za `data-*` ili baadaye iweze kuhaririwa tena.
+**examples/shotto_exam_math.zip** ina **Shotto Tools** yenye fomula 92, Spell Check, Calculator, Function Graph, Shapes na Shape Format, Draw na zana za kurasa. Bofya Shotto Tools kuona ikoni za zana ulizochagua. Kwa plugin ya zana moja, kitufe hufungua zana hiyo moja kwa moja. **examples/shotto_shapes.zip** ina michoro na Shape Format pekee. Katika fomu yoyote yenye plugin hiyo, tab ya Shapes huonekana juu ya TinyMCE. Ichague kufungua icons. Ukiuchagua mchoro, ribbon huonyesha Shape Format. Kubofya maandishi huificha. Plugin inabeba zana zake. Fomu ya mteja inaweza kupakia TinyMCE yake yenyewe. Kabla ya kusoma textarea, tumia `tinymce.triggerSave()`. Ukionyesha HTML ya equation nje ya TinyMCE, pakia `equation.css` kutoka kwenye ZIP hiyo kwenye ukurasa wa kusoma. Hifadhi markup ya equation na sifa zake za `data-*` ili baadaye iweze kuhaririwa tena.
 
 Kitendo cha kutengeneza ZIP ni local. Internet inahitajika katika demo na preview kwa TinyMCE 6 inayopakuliwa kupitia CDN. Ili kuwasilisha update, tengeneza ZIP mpya kwa ID ileile kisha badilisha plugin.js na equation.css ya zamani kwenye mfumo uliyoifunga.
 
